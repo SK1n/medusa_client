@@ -13,7 +13,11 @@ _Product _$ProductFromJson(Map<String, dynamic> json) => _Product(
       .map((e) => ProductVariant.fromJson(e as Map<String, dynamic>))
       .toList(),
   handle: json['handle'] as String?,
+  subtitle: json['subtitle'] as String?,
   thumbnail: json['thumbnail'] as String?,
+  type: json['type'] == null
+      ? null
+      : ProductType.fromJson(json['type'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$ProductToJson(_Product instance) => <String, dynamic>{
@@ -21,5 +25,7 @@ Map<String, dynamic> _$ProductToJson(_Product instance) => <String, dynamic>{
   'title': instance.title,
   'variants': instance.variants,
   'handle': instance.handle,
+  'subtitle': instance.subtitle,
   'thumbnail': instance.thumbnail,
+  'type': instance.type,
 };
