@@ -1,14 +1,5 @@
 import 'package:dio/dio.dart';
-
-class MedusaException implements Exception {
-  MedusaException({required this.message, required this.type, this.statusCode});
-  final String message;
-  final String type;
-  final int? statusCode;
-
-  @override
-  String toString() => 'MedusaException [$type]: $message';
-}
+import 'package:medusa_client/src/exceptions/medusa_exception.dart';
 
 class MedusaErrorInterceptor extends Interceptor {
   @override
