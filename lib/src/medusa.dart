@@ -3,8 +3,8 @@ import 'package:medusa_client/src/interceptors/medusa_error_interceptor.dart';
 import 'package:medusa_client/src/interceptors/medusa_store_interceptor.dart';
 import 'package:medusa_client/src/medusa_store_client.dart';
 
-class MedusaClient {
-  MedusaClient({
+class Medusa {
+  Medusa({
     required String baseUrl,
     required String publishableKey,
     Duration timeout = const Duration(seconds: 30),
