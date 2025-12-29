@@ -1,0 +1,17 @@
+include: package:very_good_analysis/analysis_options.yaml
+
+linter:
+  rules:
+    public_member_api_docs: false
+    avoid_positional_boolean_parameters: false
+    constant_identifier_names: false
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "pdf_templates/*"
+  errors:
+    invalid_annotation_target: ignore
+    avoid_catches_without_on_clauses: ignore
+    one_member_abstracts: ignore
+    flutter_style_todos: ignore

@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "kiosk",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                // "--dart-define-from-file=.env.json",
+                "--enable-experiment=dot-shorthands"
+            ],
+            "program": "lib/main.dart"
+        },
+        {
+            "name": "kiosk (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile",
+            "args": [
+                // "--dart-define-from-file=.env.json",
+                "--enable-experiment=dot-shorthands"
+            ]
+        },
+        {
+            "name": "kiosk (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+            "args": [
+                // "--dart-define-from-file=.env.json",
+                "--enable-experiment=dot-shorthands"
+            ]
+        }
+    ],
+}

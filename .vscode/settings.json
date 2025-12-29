@@ -1,0 +1,12 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "dart.flutterSdkPath": ".fvm/versions/3.38.5",
+  "editor.experimental.treeSitterTelemetry": false,
+  "editor.fontFamily": "Fira Code, monospace",
+  "terminal.integrated.fontFamily": "monospace",
+  "editor.fontLigatures": true
+}

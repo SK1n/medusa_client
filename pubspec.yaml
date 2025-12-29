@@ -1,0 +1,28 @@
+name: medusa_client
+description: "A new Flutter package project."
+version: 0.0.1
+homepage: null
+
+environment:
+  sdk: ^3.10.4
+  flutter: ">=1.17.0"
+
+dependencies:
+  build_runner: ^2.10.4
+  dio: ^5.9.0
+  flutter:
+    sdk: flutter
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.9.0
+  retrofit: ^4.9.2
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+  freezed: ^3.2.3
+  json_serializable: ^6.11.2
+  retrofit_generator: ^10.2.1
+  very_good_analysis: ^10.0.0
+
+flutter: null
