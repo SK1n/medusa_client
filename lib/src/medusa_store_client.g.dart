@@ -49,9 +49,11 @@ class _MedusaStoreClient implements MedusaStoreClient {
   }
 
   @override
-  Future<ProductResponse> getProduct(String id) async {
+  Future<ProductResponse> getProduct(String id, {ProductQuery? queries}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(queries?.toJson() ?? <String, dynamic>{});
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<ProductResponse>(

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ProductListQuery {
 
- String? get q;@JsonKey(name: 'category_id') List<String>? get categoryIds;@JsonKey(name: 'handle') String? get handle;@JsonKey(name: 'region_id') String? get regionId; int? get limit; int? get offset; String? get order;
+ String? get q;@JsonKey(name: 'category_id') List<String>? get categoryIds;@JsonKey(name: 'handle') String? get handle;@JsonKey(name: 'region_id') String? get regionId; String? get fields; int? get limit; int? get offset; String? get order;
 /// Create a copy of ProductListQuery
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $ProductListQueryCopyWith<ProductListQuery> get copyWith => _$ProductListQueryCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProductListQuery&&(identical(other.q, q) || other.q == q)&&const DeepCollectionEquality().equals(other.categoryIds, categoryIds)&&(identical(other.handle, handle) || other.handle == handle)&&(identical(other.regionId, regionId) || other.regionId == regionId)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.order, order) || other.order == order));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProductListQuery&&(identical(other.q, q) || other.q == q)&&const DeepCollectionEquality().equals(other.categoryIds, categoryIds)&&(identical(other.handle, handle) || other.handle == handle)&&(identical(other.regionId, regionId) || other.regionId == regionId)&&(identical(other.fields, fields) || other.fields == fields)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.order, order) || other.order == order));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,q,const DeepCollectionEquality().hash(categoryIds),handle,regionId,limit,offset,order);
+int get hashCode => Object.hash(runtimeType,q,const DeepCollectionEquality().hash(categoryIds),handle,regionId,fields,limit,offset,order);
 
 @override
 String toString() {
-  return 'ProductListQuery(q: $q, categoryIds: $categoryIds, handle: $handle, regionId: $regionId, limit: $limit, offset: $offset, order: $order)';
+  return 'ProductListQuery(q: $q, categoryIds: $categoryIds, handle: $handle, regionId: $regionId, fields: $fields, limit: $limit, offset: $offset, order: $order)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $ProductListQueryCopyWith<$Res>  {
   factory $ProductListQueryCopyWith(ProductListQuery value, $Res Function(ProductListQuery) _then) = _$ProductListQueryCopyWithImpl;
 @useResult
 $Res call({
- String? q,@JsonKey(name: 'category_id') List<String>? categoryIds,@JsonKey(name: 'handle') String? handle,@JsonKey(name: 'region_id') String? regionId, int? limit, int? offset, String? order
+ String? q,@JsonKey(name: 'category_id') List<String>? categoryIds,@JsonKey(name: 'handle') String? handle,@JsonKey(name: 'region_id') String? regionId, String? fields, int? limit, int? offset, String? order
 });
 
 
@@ -65,12 +65,13 @@ class _$ProductListQueryCopyWithImpl<$Res>
 
 /// Create a copy of ProductListQuery
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? q = freezed,Object? categoryIds = freezed,Object? handle = freezed,Object? regionId = freezed,Object? limit = freezed,Object? offset = freezed,Object? order = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? q = freezed,Object? categoryIds = freezed,Object? handle = freezed,Object? regionId = freezed,Object? fields = freezed,Object? limit = freezed,Object? offset = freezed,Object? order = freezed,}) {
   return _then(_self.copyWith(
 q: freezed == q ? _self.q : q // ignore: cast_nullable_to_non_nullable
 as String?,categoryIds: freezed == categoryIds ? _self.categoryIds : categoryIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,handle: freezed == handle ? _self.handle : handle // ignore: cast_nullable_to_non_nullable
 as String?,regionId: freezed == regionId ? _self.regionId : regionId // ignore: cast_nullable_to_non_nullable
+as String?,fields: freezed == fields ? _self.fields : fields // ignore: cast_nullable_to_non_nullable
 as String?,limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
 as int?,offset: freezed == offset ? _self.offset : offset // ignore: cast_nullable_to_non_nullable
 as int?,order: freezed == order ? _self.order : order // ignore: cast_nullable_to_non_nullable
@@ -159,10 +160,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? q, @JsonKey(name: 'category_id')  List<String>? categoryIds, @JsonKey(name: 'handle')  String? handle, @JsonKey(name: 'region_id')  String? regionId,  int? limit,  int? offset,  String? order)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? q, @JsonKey(name: 'category_id')  List<String>? categoryIds, @JsonKey(name: 'handle')  String? handle, @JsonKey(name: 'region_id')  String? regionId,  String? fields,  int? limit,  int? offset,  String? order)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ProductListQuery() when $default != null:
-return $default(_that.q,_that.categoryIds,_that.handle,_that.regionId,_that.limit,_that.offset,_that.order);case _:
+return $default(_that.q,_that.categoryIds,_that.handle,_that.regionId,_that.fields,_that.limit,_that.offset,_that.order);case _:
   return orElse();
 
 }
@@ -180,10 +181,10 @@ return $default(_that.q,_that.categoryIds,_that.handle,_that.regionId,_that.limi
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? q, @JsonKey(name: 'category_id')  List<String>? categoryIds, @JsonKey(name: 'handle')  String? handle, @JsonKey(name: 'region_id')  String? regionId,  int? limit,  int? offset,  String? order)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? q, @JsonKey(name: 'category_id')  List<String>? categoryIds, @JsonKey(name: 'handle')  String? handle, @JsonKey(name: 'region_id')  String? regionId,  String? fields,  int? limit,  int? offset,  String? order)  $default,) {final _that = this;
 switch (_that) {
 case _ProductListQuery():
-return $default(_that.q,_that.categoryIds,_that.handle,_that.regionId,_that.limit,_that.offset,_that.order);case _:
+return $default(_that.q,_that.categoryIds,_that.handle,_that.regionId,_that.fields,_that.limit,_that.offset,_that.order);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -200,10 +201,10 @@ return $default(_that.q,_that.categoryIds,_that.handle,_that.regionId,_that.limi
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? q, @JsonKey(name: 'category_id')  List<String>? categoryIds, @JsonKey(name: 'handle')  String? handle, @JsonKey(name: 'region_id')  String? regionId,  int? limit,  int? offset,  String? order)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? q, @JsonKey(name: 'category_id')  List<String>? categoryIds, @JsonKey(name: 'handle')  String? handle, @JsonKey(name: 'region_id')  String? regionId,  String? fields,  int? limit,  int? offset,  String? order)?  $default,) {final _that = this;
 switch (_that) {
 case _ProductListQuery() when $default != null:
-return $default(_that.q,_that.categoryIds,_that.handle,_that.regionId,_that.limit,_that.offset,_that.order);case _:
+return $default(_that.q,_that.categoryIds,_that.handle,_that.regionId,_that.fields,_that.limit,_that.offset,_that.order);case _:
   return null;
 
 }
@@ -215,7 +216,7 @@ return $default(_that.q,_that.categoryIds,_that.handle,_that.regionId,_that.limi
 @JsonSerializable()
 
 class _ProductListQuery implements ProductListQuery {
-  const _ProductListQuery({this.q, @JsonKey(name: 'category_id') final  List<String>? categoryIds, @JsonKey(name: 'handle') this.handle, @JsonKey(name: 'region_id') this.regionId, this.limit, this.offset, this.order}): _categoryIds = categoryIds;
+  const _ProductListQuery({this.q, @JsonKey(name: 'category_id') final  List<String>? categoryIds, @JsonKey(name: 'handle') this.handle, @JsonKey(name: 'region_id') this.regionId, this.fields, this.limit, this.offset, this.order}): _categoryIds = categoryIds;
   factory _ProductListQuery.fromJson(Map<String, dynamic> json) => _$ProductListQueryFromJson(json);
 
 @override final  String? q;
@@ -230,6 +231,7 @@ class _ProductListQuery implements ProductListQuery {
 
 @override@JsonKey(name: 'handle') final  String? handle;
 @override@JsonKey(name: 'region_id') final  String? regionId;
+@override final  String? fields;
 @override final  int? limit;
 @override final  int? offset;
 @override final  String? order;
@@ -247,16 +249,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ProductListQuery&&(identical(other.q, q) || other.q == q)&&const DeepCollectionEquality().equals(other._categoryIds, _categoryIds)&&(identical(other.handle, handle) || other.handle == handle)&&(identical(other.regionId, regionId) || other.regionId == regionId)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.order, order) || other.order == order));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ProductListQuery&&(identical(other.q, q) || other.q == q)&&const DeepCollectionEquality().equals(other._categoryIds, _categoryIds)&&(identical(other.handle, handle) || other.handle == handle)&&(identical(other.regionId, regionId) || other.regionId == regionId)&&(identical(other.fields, fields) || other.fields == fields)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.order, order) || other.order == order));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,q,const DeepCollectionEquality().hash(_categoryIds),handle,regionId,limit,offset,order);
+int get hashCode => Object.hash(runtimeType,q,const DeepCollectionEquality().hash(_categoryIds),handle,regionId,fields,limit,offset,order);
 
 @override
 String toString() {
-  return 'ProductListQuery(q: $q, categoryIds: $categoryIds, handle: $handle, regionId: $regionId, limit: $limit, offset: $offset, order: $order)';
+  return 'ProductListQuery(q: $q, categoryIds: $categoryIds, handle: $handle, regionId: $regionId, fields: $fields, limit: $limit, offset: $offset, order: $order)';
 }
 
 
@@ -267,7 +269,7 @@ abstract mixin class _$ProductListQueryCopyWith<$Res> implements $ProductListQue
   factory _$ProductListQueryCopyWith(_ProductListQuery value, $Res Function(_ProductListQuery) _then) = __$ProductListQueryCopyWithImpl;
 @override @useResult
 $Res call({
- String? q,@JsonKey(name: 'category_id') List<String>? categoryIds,@JsonKey(name: 'handle') String? handle,@JsonKey(name: 'region_id') String? regionId, int? limit, int? offset, String? order
+ String? q,@JsonKey(name: 'category_id') List<String>? categoryIds,@JsonKey(name: 'handle') String? handle,@JsonKey(name: 'region_id') String? regionId, String? fields, int? limit, int? offset, String? order
 });
 
 
@@ -284,12 +286,13 @@ class __$ProductListQueryCopyWithImpl<$Res>
 
 /// Create a copy of ProductListQuery
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? q = freezed,Object? categoryIds = freezed,Object? handle = freezed,Object? regionId = freezed,Object? limit = freezed,Object? offset = freezed,Object? order = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? q = freezed,Object? categoryIds = freezed,Object? handle = freezed,Object? regionId = freezed,Object? fields = freezed,Object? limit = freezed,Object? offset = freezed,Object? order = freezed,}) {
   return _then(_ProductListQuery(
 q: freezed == q ? _self.q : q // ignore: cast_nullable_to_non_nullable
 as String?,categoryIds: freezed == categoryIds ? _self._categoryIds : categoryIds // ignore: cast_nullable_to_non_nullable
 as List<String>?,handle: freezed == handle ? _self.handle : handle // ignore: cast_nullable_to_non_nullable
 as String?,regionId: freezed == regionId ? _self.regionId : regionId // ignore: cast_nullable_to_non_nullable
+as String?,fields: freezed == fields ? _self.fields : fields // ignore: cast_nullable_to_non_nullable
 as String?,limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
 as int?,offset: freezed == offset ? _self.offset : offset // ignore: cast_nullable_to_non_nullable
 as int?,order: freezed == order ? _self.order : order // ignore: cast_nullable_to_non_nullable

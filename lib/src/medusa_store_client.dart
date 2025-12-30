@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:medusa_client/src/models/models.dart';
+import 'package:medusa_client/src/models/store/requests/product_query.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'medusa_store_client.g.dart';
@@ -15,7 +16,10 @@ abstract class MedusaStoreClient {
   });
 
   @GET('/store/products/{id}')
-  Future<ProductResponse> getProduct(@Path('id') String id);
+  Future<ProductResponse> getProduct(
+    @Path('id') String id, {
+    @Queries() ProductQuery? queries,
+  });
 
   // --- Carts ---
   @POST('/store/carts')

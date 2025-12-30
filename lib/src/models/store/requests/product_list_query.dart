@@ -10,6 +10,7 @@ abstract class ProductListQuery with _$ProductListQuery {
     @JsonKey(name: 'category_id') List<String>? categoryIds,
     @JsonKey(name: 'handle') String? handle,
     @JsonKey(name: 'region_id') String? regionId,
+    String? fields,
     int? limit,
     int? offset,
     String? order,
