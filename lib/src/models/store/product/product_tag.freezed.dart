@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'product_type.dart';
+part of 'product_tag.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,22 +13,22 @@ part of 'product_type.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$ProductType {
+mixin _$ProductTag {
 
  String get id; String? get value; Map<String, dynamic>? get metadata;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
-/// Create a copy of ProductType
+/// Create a copy of ProductTag
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$ProductTypeCopyWith<ProductType> get copyWith => _$ProductTypeCopyWithImpl<ProductType>(this as ProductType, _$identity);
+$ProductTagCopyWith<ProductTag> get copyWith => _$ProductTagCopyWithImpl<ProductTag>(this as ProductTag, _$identity);
 
-  /// Serializes this ProductType to a JSON map.
+  /// Serializes this ProductTag to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProductType&&(identical(other.id, id) || other.id == id)&&(identical(other.value, value) || other.value == value)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProductTag&&(identical(other.id, id) || other.id == id)&&(identical(other.value, value) || other.value == value)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -37,15 +37,15 @@ int get hashCode => Object.hash(runtimeType,id,value,const DeepCollectionEqualit
 
 @override
 String toString() {
-  return 'ProductType(id: $id, value: $value, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
+  return 'ProductTag(id: $id, value: $value, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $ProductTypeCopyWith<$Res>  {
-  factory $ProductTypeCopyWith(ProductType value, $Res Function(ProductType) _then) = _$ProductTypeCopyWithImpl;
+abstract mixin class $ProductTagCopyWith<$Res>  {
+  factory $ProductTagCopyWith(ProductTag value, $Res Function(ProductTag) _then) = _$ProductTagCopyWithImpl;
 @useResult
 $Res call({
  String id, String? value, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
@@ -56,14 +56,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$ProductTypeCopyWithImpl<$Res>
-    implements $ProductTypeCopyWith<$Res> {
-  _$ProductTypeCopyWithImpl(this._self, this._then);
+class _$ProductTagCopyWithImpl<$Res>
+    implements $ProductTagCopyWith<$Res> {
+  _$ProductTagCopyWithImpl(this._self, this._then);
 
-  final ProductType _self;
-  final $Res Function(ProductType) _then;
+  final ProductTag _self;
+  final $Res Function(ProductTag) _then;
 
-/// Create a copy of ProductType
+/// Create a copy of ProductTag
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? value = freezed,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
@@ -80,8 +80,8 @@ as DateTime?,
 }
 
 
-/// Adds pattern-matching-related methods to [ProductType].
-extension ProductTypePatterns on ProductType {
+/// Adds pattern-matching-related methods to [ProductTag].
+extension ProductTagPatterns on ProductTag {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -94,10 +94,10 @@ extension ProductTypePatterns on ProductType {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ProductType value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ProductTag value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _ProductType() when $default != null:
+case _ProductTag() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -116,10 +116,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ProductType value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ProductTag value)  $default,){
 final _that = this;
 switch (_that) {
-case _ProductType():
+case _ProductTag():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -137,10 +137,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ProductType value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ProductTag value)?  $default,){
 final _that = this;
 switch (_that) {
-case _ProductType() when $default != null:
+case _ProductTag() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -160,7 +160,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String? value,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _ProductType() when $default != null:
+case _ProductTag() when $default != null:
 return $default(_that.id,_that.value,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   return orElse();
 
@@ -181,7 +181,7 @@ return $default(_that.id,_that.value,_that.metadata,_that.createdAt,_that.update
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String? value,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
-case _ProductType():
+case _ProductTag():
 return $default(_that.id,_that.value,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   throw StateError('Unexpected subclass');
 
@@ -201,7 +201,7 @@ return $default(_that.id,_that.value,_that.metadata,_that.createdAt,_that.update
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String? value,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
-case _ProductType() when $default != null:
+case _ProductTag() when $default != null:
 return $default(_that.id,_that.value,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   return null;
 
@@ -213,9 +213,9 @@ return $default(_that.id,_that.value,_that.metadata,_that.createdAt,_that.update
 /// @nodoc
 @JsonSerializable()
 
-class _ProductType implements ProductType {
-  const _ProductType({required this.id, this.value, final  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt}): _metadata = metadata;
-  factory _ProductType.fromJson(Map<String, dynamic> json) => _$ProductTypeFromJson(json);
+class _ProductTag implements ProductTag {
+  const _ProductTag({required this.id, this.value, final  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt}): _metadata = metadata;
+  factory _ProductTag.fromJson(Map<String, dynamic> json) => _$ProductTagFromJson(json);
 
 @override final  String id;
 @override final  String? value;
@@ -232,20 +232,20 @@ class _ProductType implements ProductType {
 @override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
 @override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
 
-/// Create a copy of ProductType
+/// Create a copy of ProductTag
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$ProductTypeCopyWith<_ProductType> get copyWith => __$ProductTypeCopyWithImpl<_ProductType>(this, _$identity);
+_$ProductTagCopyWith<_ProductTag> get copyWith => __$ProductTagCopyWithImpl<_ProductTag>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$ProductTypeToJson(this, );
+  return _$ProductTagToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ProductType&&(identical(other.id, id) || other.id == id)&&(identical(other.value, value) || other.value == value)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ProductTag&&(identical(other.id, id) || other.id == id)&&(identical(other.value, value) || other.value == value)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -254,15 +254,15 @@ int get hashCode => Object.hash(runtimeType,id,value,const DeepCollectionEqualit
 
 @override
 String toString() {
-  return 'ProductType(id: $id, value: $value, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
+  return 'ProductTag(id: $id, value: $value, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$ProductTypeCopyWith<$Res> implements $ProductTypeCopyWith<$Res> {
-  factory _$ProductTypeCopyWith(_ProductType value, $Res Function(_ProductType) _then) = __$ProductTypeCopyWithImpl;
+abstract mixin class _$ProductTagCopyWith<$Res> implements $ProductTagCopyWith<$Res> {
+  factory _$ProductTagCopyWith(_ProductTag value, $Res Function(_ProductTag) _then) = __$ProductTagCopyWithImpl;
 @override @useResult
 $Res call({
  String id, String? value, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
@@ -273,17 +273,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$ProductTypeCopyWithImpl<$Res>
-    implements _$ProductTypeCopyWith<$Res> {
-  __$ProductTypeCopyWithImpl(this._self, this._then);
+class __$ProductTagCopyWithImpl<$Res>
+    implements _$ProductTagCopyWith<$Res> {
+  __$ProductTagCopyWithImpl(this._self, this._then);
 
-  final _ProductType _self;
-  final $Res Function(_ProductType) _then;
+  final _ProductTag _self;
+  final $Res Function(_ProductTag) _then;
 
-/// Create a copy of ProductType
+/// Create a copy of ProductTag
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? value = freezed,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
-  return _then(_ProductType(
+  return _then(_ProductTag(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,value: freezed == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as String?,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable

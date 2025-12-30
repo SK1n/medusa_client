@@ -1,19 +1,19 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'product_type.freezed.dart';
-part 'product_type.g.dart';
+part 'product_tag.freezed.dart';
+part 'product_tag.g.dart';
 
 @freezed
-abstract class ProductType with _$ProductType {
-  const factory ProductType({
+abstract class ProductTag with _$ProductTag {
+  const factory ProductTag({
     required String id,
     String? value,
     Map<String, dynamic>? metadata,
     @JsonKey(name: 'created_at') DateTime? createdAt,
     @JsonKey(name: 'updated_at') DateTime? updatedAt,
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,
-  }) = _ProductType;
+  }) = _ProductTag;
 
-  factory ProductType.fromJson(Map<String, dynamic> json) =>
-      _$ProductTypeFromJson(json);
+  factory ProductTag.fromJson(Map<String, dynamic> json) =>
+      _$ProductTagFromJson(json);
 }

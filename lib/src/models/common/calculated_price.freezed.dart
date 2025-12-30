@@ -15,10 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$CalculatedPrice {
 
-// The amount actually charged (e.g., 1000 for $10.00)
- int get amount;@JsonKey(name: 'currency_code') String get currencyCode;// Detailed breakdown of how this price was reached
-@JsonKey(name: 'calculated_amount') int? get calculatedAmount;@JsonKey(name: 'is_tax_inclusive') bool get isTaxInclusive;// Optional: The original price before discounts
-@JsonKey(name: 'original_amount') int? get originalAmount;
+ String? get id;@JsonKey(name: 'is_calculated_price_price_list') bool? get isCalculatedPricePriceList;@JsonKey(name: 'is_calculated_price_tax_inclusive') bool? get isCalculatedPriceTaxInclusive;@JsonKey(name: 'calculated_amount') int? get calculatedAmount;@JsonKey(name: 'calculated_amount_with_tax') int? get calculatedAmountWithTax;@JsonKey(name: 'calculated_amount_without_tax') int? get calculatedAmountWithoutTax;@JsonKey(name: 'is_original_price_price_list') bool? get isOriginalPricePriceList;@JsonKey(name: 'is_original_price_tax_inclusive') bool? get isOriginalPriceTaxInclusive;@JsonKey(name: 'original_amount') int? get originalAmount;@JsonKey(name: 'original_amount_with_tax') int? get originalAmountWithTax;@JsonKey(name: 'original_amount_without_tax') int? get originalAmountWithoutTax;@JsonKey(name: 'currency_code') String? get currencyCode;@JsonKey(name: 'calculated_price') Map<String, dynamic>? get calculatedPrice;@JsonKey(name: 'original_price') Map<String, dynamic>? get originalPrice;
 /// Create a copy of CalculatedPrice
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -31,16 +28,16 @@ $CalculatedPriceCopyWith<CalculatedPrice> get copyWith => _$CalculatedPriceCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CalculatedPrice&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.currencyCode, currencyCode) || other.currencyCode == currencyCode)&&(identical(other.calculatedAmount, calculatedAmount) || other.calculatedAmount == calculatedAmount)&&(identical(other.isTaxInclusive, isTaxInclusive) || other.isTaxInclusive == isTaxInclusive)&&(identical(other.originalAmount, originalAmount) || other.originalAmount == originalAmount));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CalculatedPrice&&(identical(other.id, id) || other.id == id)&&(identical(other.isCalculatedPricePriceList, isCalculatedPricePriceList) || other.isCalculatedPricePriceList == isCalculatedPricePriceList)&&(identical(other.isCalculatedPriceTaxInclusive, isCalculatedPriceTaxInclusive) || other.isCalculatedPriceTaxInclusive == isCalculatedPriceTaxInclusive)&&(identical(other.calculatedAmount, calculatedAmount) || other.calculatedAmount == calculatedAmount)&&(identical(other.calculatedAmountWithTax, calculatedAmountWithTax) || other.calculatedAmountWithTax == calculatedAmountWithTax)&&(identical(other.calculatedAmountWithoutTax, calculatedAmountWithoutTax) || other.calculatedAmountWithoutTax == calculatedAmountWithoutTax)&&(identical(other.isOriginalPricePriceList, isOriginalPricePriceList) || other.isOriginalPricePriceList == isOriginalPricePriceList)&&(identical(other.isOriginalPriceTaxInclusive, isOriginalPriceTaxInclusive) || other.isOriginalPriceTaxInclusive == isOriginalPriceTaxInclusive)&&(identical(other.originalAmount, originalAmount) || other.originalAmount == originalAmount)&&(identical(other.originalAmountWithTax, originalAmountWithTax) || other.originalAmountWithTax == originalAmountWithTax)&&(identical(other.originalAmountWithoutTax, originalAmountWithoutTax) || other.originalAmountWithoutTax == originalAmountWithoutTax)&&(identical(other.currencyCode, currencyCode) || other.currencyCode == currencyCode)&&const DeepCollectionEquality().equals(other.calculatedPrice, calculatedPrice)&&const DeepCollectionEquality().equals(other.originalPrice, originalPrice));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,amount,currencyCode,calculatedAmount,isTaxInclusive,originalAmount);
+int get hashCode => Object.hash(runtimeType,id,isCalculatedPricePriceList,isCalculatedPriceTaxInclusive,calculatedAmount,calculatedAmountWithTax,calculatedAmountWithoutTax,isOriginalPricePriceList,isOriginalPriceTaxInclusive,originalAmount,originalAmountWithTax,originalAmountWithoutTax,currencyCode,const DeepCollectionEquality().hash(calculatedPrice),const DeepCollectionEquality().hash(originalPrice));
 
 @override
 String toString() {
-  return 'CalculatedPrice(amount: $amount, currencyCode: $currencyCode, calculatedAmount: $calculatedAmount, isTaxInclusive: $isTaxInclusive, originalAmount: $originalAmount)';
+  return 'CalculatedPrice(id: $id, isCalculatedPricePriceList: $isCalculatedPricePriceList, isCalculatedPriceTaxInclusive: $isCalculatedPriceTaxInclusive, calculatedAmount: $calculatedAmount, calculatedAmountWithTax: $calculatedAmountWithTax, calculatedAmountWithoutTax: $calculatedAmountWithoutTax, isOriginalPricePriceList: $isOriginalPricePriceList, isOriginalPriceTaxInclusive: $isOriginalPriceTaxInclusive, originalAmount: $originalAmount, originalAmountWithTax: $originalAmountWithTax, originalAmountWithoutTax: $originalAmountWithoutTax, currencyCode: $currencyCode, calculatedPrice: $calculatedPrice, originalPrice: $originalPrice)';
 }
 
 
@@ -51,7 +48,7 @@ abstract mixin class $CalculatedPriceCopyWith<$Res>  {
   factory $CalculatedPriceCopyWith(CalculatedPrice value, $Res Function(CalculatedPrice) _then) = _$CalculatedPriceCopyWithImpl;
 @useResult
 $Res call({
- int amount,@JsonKey(name: 'currency_code') String currencyCode,@JsonKey(name: 'calculated_amount') int? calculatedAmount,@JsonKey(name: 'is_tax_inclusive') bool isTaxInclusive,@JsonKey(name: 'original_amount') int? originalAmount
+ String? id,@JsonKey(name: 'is_calculated_price_price_list') bool? isCalculatedPricePriceList,@JsonKey(name: 'is_calculated_price_tax_inclusive') bool? isCalculatedPriceTaxInclusive,@JsonKey(name: 'calculated_amount') int? calculatedAmount,@JsonKey(name: 'calculated_amount_with_tax') int? calculatedAmountWithTax,@JsonKey(name: 'calculated_amount_without_tax') int? calculatedAmountWithoutTax,@JsonKey(name: 'is_original_price_price_list') bool? isOriginalPricePriceList,@JsonKey(name: 'is_original_price_tax_inclusive') bool? isOriginalPriceTaxInclusive,@JsonKey(name: 'original_amount') int? originalAmount,@JsonKey(name: 'original_amount_with_tax') int? originalAmountWithTax,@JsonKey(name: 'original_amount_without_tax') int? originalAmountWithoutTax,@JsonKey(name: 'currency_code') String? currencyCode,@JsonKey(name: 'calculated_price') Map<String, dynamic>? calculatedPrice,@JsonKey(name: 'original_price') Map<String, dynamic>? originalPrice
 });
 
 
@@ -68,14 +65,23 @@ class _$CalculatedPriceCopyWithImpl<$Res>
 
 /// Create a copy of CalculatedPrice
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? amount = null,Object? currencyCode = null,Object? calculatedAmount = freezed,Object? isTaxInclusive = null,Object? originalAmount = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? isCalculatedPricePriceList = freezed,Object? isCalculatedPriceTaxInclusive = freezed,Object? calculatedAmount = freezed,Object? calculatedAmountWithTax = freezed,Object? calculatedAmountWithoutTax = freezed,Object? isOriginalPricePriceList = freezed,Object? isOriginalPriceTaxInclusive = freezed,Object? originalAmount = freezed,Object? originalAmountWithTax = freezed,Object? originalAmountWithoutTax = freezed,Object? currencyCode = freezed,Object? calculatedPrice = freezed,Object? originalPrice = freezed,}) {
   return _then(_self.copyWith(
-amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
-as int,currencyCode: null == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
-as String,calculatedAmount: freezed == calculatedAmount ? _self.calculatedAmount : calculatedAmount // ignore: cast_nullable_to_non_nullable
-as int?,isTaxInclusive: null == isTaxInclusive ? _self.isTaxInclusive : isTaxInclusive // ignore: cast_nullable_to_non_nullable
-as bool,originalAmount: freezed == originalAmount ? _self.originalAmount : originalAmount // ignore: cast_nullable_to_non_nullable
-as int?,
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,isCalculatedPricePriceList: freezed == isCalculatedPricePriceList ? _self.isCalculatedPricePriceList : isCalculatedPricePriceList // ignore: cast_nullable_to_non_nullable
+as bool?,isCalculatedPriceTaxInclusive: freezed == isCalculatedPriceTaxInclusive ? _self.isCalculatedPriceTaxInclusive : isCalculatedPriceTaxInclusive // ignore: cast_nullable_to_non_nullable
+as bool?,calculatedAmount: freezed == calculatedAmount ? _self.calculatedAmount : calculatedAmount // ignore: cast_nullable_to_non_nullable
+as int?,calculatedAmountWithTax: freezed == calculatedAmountWithTax ? _self.calculatedAmountWithTax : calculatedAmountWithTax // ignore: cast_nullable_to_non_nullable
+as int?,calculatedAmountWithoutTax: freezed == calculatedAmountWithoutTax ? _self.calculatedAmountWithoutTax : calculatedAmountWithoutTax // ignore: cast_nullable_to_non_nullable
+as int?,isOriginalPricePriceList: freezed == isOriginalPricePriceList ? _self.isOriginalPricePriceList : isOriginalPricePriceList // ignore: cast_nullable_to_non_nullable
+as bool?,isOriginalPriceTaxInclusive: freezed == isOriginalPriceTaxInclusive ? _self.isOriginalPriceTaxInclusive : isOriginalPriceTaxInclusive // ignore: cast_nullable_to_non_nullable
+as bool?,originalAmount: freezed == originalAmount ? _self.originalAmount : originalAmount // ignore: cast_nullable_to_non_nullable
+as int?,originalAmountWithTax: freezed == originalAmountWithTax ? _self.originalAmountWithTax : originalAmountWithTax // ignore: cast_nullable_to_non_nullable
+as int?,originalAmountWithoutTax: freezed == originalAmountWithoutTax ? _self.originalAmountWithoutTax : originalAmountWithoutTax // ignore: cast_nullable_to_non_nullable
+as int?,currencyCode: freezed == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
+as String?,calculatedPrice: freezed == calculatedPrice ? _self.calculatedPrice : calculatedPrice // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,originalPrice: freezed == originalPrice ? _self.originalPrice : originalPrice // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,
   ));
 }
 
@@ -160,10 +166,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int amount, @JsonKey(name: 'currency_code')  String currencyCode, @JsonKey(name: 'calculated_amount')  int? calculatedAmount, @JsonKey(name: 'is_tax_inclusive')  bool isTaxInclusive, @JsonKey(name: 'original_amount')  int? originalAmount)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id, @JsonKey(name: 'is_calculated_price_price_list')  bool? isCalculatedPricePriceList, @JsonKey(name: 'is_calculated_price_tax_inclusive')  bool? isCalculatedPriceTaxInclusive, @JsonKey(name: 'calculated_amount')  int? calculatedAmount, @JsonKey(name: 'calculated_amount_with_tax')  int? calculatedAmountWithTax, @JsonKey(name: 'calculated_amount_without_tax')  int? calculatedAmountWithoutTax, @JsonKey(name: 'is_original_price_price_list')  bool? isOriginalPricePriceList, @JsonKey(name: 'is_original_price_tax_inclusive')  bool? isOriginalPriceTaxInclusive, @JsonKey(name: 'original_amount')  int? originalAmount, @JsonKey(name: 'original_amount_with_tax')  int? originalAmountWithTax, @JsonKey(name: 'original_amount_without_tax')  int? originalAmountWithoutTax, @JsonKey(name: 'currency_code')  String? currencyCode, @JsonKey(name: 'calculated_price')  Map<String, dynamic>? calculatedPrice, @JsonKey(name: 'original_price')  Map<String, dynamic>? originalPrice)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CalculatedPrice() when $default != null:
-return $default(_that.amount,_that.currencyCode,_that.calculatedAmount,_that.isTaxInclusive,_that.originalAmount);case _:
+return $default(_that.id,_that.isCalculatedPricePriceList,_that.isCalculatedPriceTaxInclusive,_that.calculatedAmount,_that.calculatedAmountWithTax,_that.calculatedAmountWithoutTax,_that.isOriginalPricePriceList,_that.isOriginalPriceTaxInclusive,_that.originalAmount,_that.originalAmountWithTax,_that.originalAmountWithoutTax,_that.currencyCode,_that.calculatedPrice,_that.originalPrice);case _:
   return orElse();
 
 }
@@ -181,10 +187,10 @@ return $default(_that.amount,_that.currencyCode,_that.calculatedAmount,_that.isT
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int amount, @JsonKey(name: 'currency_code')  String currencyCode, @JsonKey(name: 'calculated_amount')  int? calculatedAmount, @JsonKey(name: 'is_tax_inclusive')  bool isTaxInclusive, @JsonKey(name: 'original_amount')  int? originalAmount)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id, @JsonKey(name: 'is_calculated_price_price_list')  bool? isCalculatedPricePriceList, @JsonKey(name: 'is_calculated_price_tax_inclusive')  bool? isCalculatedPriceTaxInclusive, @JsonKey(name: 'calculated_amount')  int? calculatedAmount, @JsonKey(name: 'calculated_amount_with_tax')  int? calculatedAmountWithTax, @JsonKey(name: 'calculated_amount_without_tax')  int? calculatedAmountWithoutTax, @JsonKey(name: 'is_original_price_price_list')  bool? isOriginalPricePriceList, @JsonKey(name: 'is_original_price_tax_inclusive')  bool? isOriginalPriceTaxInclusive, @JsonKey(name: 'original_amount')  int? originalAmount, @JsonKey(name: 'original_amount_with_tax')  int? originalAmountWithTax, @JsonKey(name: 'original_amount_without_tax')  int? originalAmountWithoutTax, @JsonKey(name: 'currency_code')  String? currencyCode, @JsonKey(name: 'calculated_price')  Map<String, dynamic>? calculatedPrice, @JsonKey(name: 'original_price')  Map<String, dynamic>? originalPrice)  $default,) {final _that = this;
 switch (_that) {
 case _CalculatedPrice():
-return $default(_that.amount,_that.currencyCode,_that.calculatedAmount,_that.isTaxInclusive,_that.originalAmount);case _:
+return $default(_that.id,_that.isCalculatedPricePriceList,_that.isCalculatedPriceTaxInclusive,_that.calculatedAmount,_that.calculatedAmountWithTax,_that.calculatedAmountWithoutTax,_that.isOriginalPricePriceList,_that.isOriginalPriceTaxInclusive,_that.originalAmount,_that.originalAmountWithTax,_that.originalAmountWithoutTax,_that.currencyCode,_that.calculatedPrice,_that.originalPrice);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -201,10 +207,10 @@ return $default(_that.amount,_that.currencyCode,_that.calculatedAmount,_that.isT
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int amount, @JsonKey(name: 'currency_code')  String currencyCode, @JsonKey(name: 'calculated_amount')  int? calculatedAmount, @JsonKey(name: 'is_tax_inclusive')  bool isTaxInclusive, @JsonKey(name: 'original_amount')  int? originalAmount)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id, @JsonKey(name: 'is_calculated_price_price_list')  bool? isCalculatedPricePriceList, @JsonKey(name: 'is_calculated_price_tax_inclusive')  bool? isCalculatedPriceTaxInclusive, @JsonKey(name: 'calculated_amount')  int? calculatedAmount, @JsonKey(name: 'calculated_amount_with_tax')  int? calculatedAmountWithTax, @JsonKey(name: 'calculated_amount_without_tax')  int? calculatedAmountWithoutTax, @JsonKey(name: 'is_original_price_price_list')  bool? isOriginalPricePriceList, @JsonKey(name: 'is_original_price_tax_inclusive')  bool? isOriginalPriceTaxInclusive, @JsonKey(name: 'original_amount')  int? originalAmount, @JsonKey(name: 'original_amount_with_tax')  int? originalAmountWithTax, @JsonKey(name: 'original_amount_without_tax')  int? originalAmountWithoutTax, @JsonKey(name: 'currency_code')  String? currencyCode, @JsonKey(name: 'calculated_price')  Map<String, dynamic>? calculatedPrice, @JsonKey(name: 'original_price')  Map<String, dynamic>? originalPrice)?  $default,) {final _that = this;
 switch (_that) {
 case _CalculatedPrice() when $default != null:
-return $default(_that.amount,_that.currencyCode,_that.calculatedAmount,_that.isTaxInclusive,_that.originalAmount);case _:
+return $default(_that.id,_that.isCalculatedPricePriceList,_that.isCalculatedPriceTaxInclusive,_that.calculatedAmount,_that.calculatedAmountWithTax,_that.calculatedAmountWithoutTax,_that.isOriginalPricePriceList,_that.isOriginalPriceTaxInclusive,_that.originalAmount,_that.originalAmountWithTax,_that.originalAmountWithoutTax,_that.currencyCode,_that.calculatedPrice,_that.originalPrice);case _:
   return null;
 
 }
@@ -213,20 +219,42 @@ return $default(_that.amount,_that.currencyCode,_that.calculatedAmount,_that.isT
 }
 
 /// @nodoc
+@JsonSerializable()
 
-@JsonSerializable(explicitToJson: true)
 class _CalculatedPrice implements CalculatedPrice {
-  const _CalculatedPrice({required this.amount, @JsonKey(name: 'currency_code') required this.currencyCode, @JsonKey(name: 'calculated_amount') this.calculatedAmount, @JsonKey(name: 'is_tax_inclusive') this.isTaxInclusive = false, @JsonKey(name: 'original_amount') this.originalAmount});
+  const _CalculatedPrice({this.id, @JsonKey(name: 'is_calculated_price_price_list') this.isCalculatedPricePriceList, @JsonKey(name: 'is_calculated_price_tax_inclusive') this.isCalculatedPriceTaxInclusive, @JsonKey(name: 'calculated_amount') this.calculatedAmount, @JsonKey(name: 'calculated_amount_with_tax') this.calculatedAmountWithTax, @JsonKey(name: 'calculated_amount_without_tax') this.calculatedAmountWithoutTax, @JsonKey(name: 'is_original_price_price_list') this.isOriginalPricePriceList, @JsonKey(name: 'is_original_price_tax_inclusive') this.isOriginalPriceTaxInclusive, @JsonKey(name: 'original_amount') this.originalAmount, @JsonKey(name: 'original_amount_with_tax') this.originalAmountWithTax, @JsonKey(name: 'original_amount_without_tax') this.originalAmountWithoutTax, @JsonKey(name: 'currency_code') this.currencyCode, @JsonKey(name: 'calculated_price') final  Map<String, dynamic>? calculatedPrice, @JsonKey(name: 'original_price') final  Map<String, dynamic>? originalPrice}): _calculatedPrice = calculatedPrice,_originalPrice = originalPrice;
   factory _CalculatedPrice.fromJson(Map<String, dynamic> json) => _$CalculatedPriceFromJson(json);
 
-// The amount actually charged (e.g., 1000 for $10.00)
-@override final  int amount;
-@override@JsonKey(name: 'currency_code') final  String currencyCode;
-// Detailed breakdown of how this price was reached
+@override final  String? id;
+@override@JsonKey(name: 'is_calculated_price_price_list') final  bool? isCalculatedPricePriceList;
+@override@JsonKey(name: 'is_calculated_price_tax_inclusive') final  bool? isCalculatedPriceTaxInclusive;
 @override@JsonKey(name: 'calculated_amount') final  int? calculatedAmount;
-@override@JsonKey(name: 'is_tax_inclusive') final  bool isTaxInclusive;
-// Optional: The original price before discounts
+@override@JsonKey(name: 'calculated_amount_with_tax') final  int? calculatedAmountWithTax;
+@override@JsonKey(name: 'calculated_amount_without_tax') final  int? calculatedAmountWithoutTax;
+@override@JsonKey(name: 'is_original_price_price_list') final  bool? isOriginalPricePriceList;
+@override@JsonKey(name: 'is_original_price_tax_inclusive') final  bool? isOriginalPriceTaxInclusive;
 @override@JsonKey(name: 'original_amount') final  int? originalAmount;
+@override@JsonKey(name: 'original_amount_with_tax') final  int? originalAmountWithTax;
+@override@JsonKey(name: 'original_amount_without_tax') final  int? originalAmountWithoutTax;
+@override@JsonKey(name: 'currency_code') final  String? currencyCode;
+ final  Map<String, dynamic>? _calculatedPrice;
+@override@JsonKey(name: 'calculated_price') Map<String, dynamic>? get calculatedPrice {
+  final value = _calculatedPrice;
+  if (value == null) return null;
+  if (_calculatedPrice is EqualUnmodifiableMapView) return _calculatedPrice;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableMapView(value);
+}
+
+ final  Map<String, dynamic>? _originalPrice;
+@override@JsonKey(name: 'original_price') Map<String, dynamic>? get originalPrice {
+  final value = _originalPrice;
+  if (value == null) return null;
+  if (_originalPrice is EqualUnmodifiableMapView) return _originalPrice;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableMapView(value);
+}
+
 
 /// Create a copy of CalculatedPrice
 /// with the given fields replaced by the non-null parameter values.
@@ -241,16 +269,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CalculatedPrice&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.currencyCode, currencyCode) || other.currencyCode == currencyCode)&&(identical(other.calculatedAmount, calculatedAmount) || other.calculatedAmount == calculatedAmount)&&(identical(other.isTaxInclusive, isTaxInclusive) || other.isTaxInclusive == isTaxInclusive)&&(identical(other.originalAmount, originalAmount) || other.originalAmount == originalAmount));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CalculatedPrice&&(identical(other.id, id) || other.id == id)&&(identical(other.isCalculatedPricePriceList, isCalculatedPricePriceList) || other.isCalculatedPricePriceList == isCalculatedPricePriceList)&&(identical(other.isCalculatedPriceTaxInclusive, isCalculatedPriceTaxInclusive) || other.isCalculatedPriceTaxInclusive == isCalculatedPriceTaxInclusive)&&(identical(other.calculatedAmount, calculatedAmount) || other.calculatedAmount == calculatedAmount)&&(identical(other.calculatedAmountWithTax, calculatedAmountWithTax) || other.calculatedAmountWithTax == calculatedAmountWithTax)&&(identical(other.calculatedAmountWithoutTax, calculatedAmountWithoutTax) || other.calculatedAmountWithoutTax == calculatedAmountWithoutTax)&&(identical(other.isOriginalPricePriceList, isOriginalPricePriceList) || other.isOriginalPricePriceList == isOriginalPricePriceList)&&(identical(other.isOriginalPriceTaxInclusive, isOriginalPriceTaxInclusive) || other.isOriginalPriceTaxInclusive == isOriginalPriceTaxInclusive)&&(identical(other.originalAmount, originalAmount) || other.originalAmount == originalAmount)&&(identical(other.originalAmountWithTax, originalAmountWithTax) || other.originalAmountWithTax == originalAmountWithTax)&&(identical(other.originalAmountWithoutTax, originalAmountWithoutTax) || other.originalAmountWithoutTax == originalAmountWithoutTax)&&(identical(other.currencyCode, currencyCode) || other.currencyCode == currencyCode)&&const DeepCollectionEquality().equals(other._calculatedPrice, _calculatedPrice)&&const DeepCollectionEquality().equals(other._originalPrice, _originalPrice));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,amount,currencyCode,calculatedAmount,isTaxInclusive,originalAmount);
+int get hashCode => Object.hash(runtimeType,id,isCalculatedPricePriceList,isCalculatedPriceTaxInclusive,calculatedAmount,calculatedAmountWithTax,calculatedAmountWithoutTax,isOriginalPricePriceList,isOriginalPriceTaxInclusive,originalAmount,originalAmountWithTax,originalAmountWithoutTax,currencyCode,const DeepCollectionEquality().hash(_calculatedPrice),const DeepCollectionEquality().hash(_originalPrice));
 
 @override
 String toString() {
-  return 'CalculatedPrice(amount: $amount, currencyCode: $currencyCode, calculatedAmount: $calculatedAmount, isTaxInclusive: $isTaxInclusive, originalAmount: $originalAmount)';
+  return 'CalculatedPrice(id: $id, isCalculatedPricePriceList: $isCalculatedPricePriceList, isCalculatedPriceTaxInclusive: $isCalculatedPriceTaxInclusive, calculatedAmount: $calculatedAmount, calculatedAmountWithTax: $calculatedAmountWithTax, calculatedAmountWithoutTax: $calculatedAmountWithoutTax, isOriginalPricePriceList: $isOriginalPricePriceList, isOriginalPriceTaxInclusive: $isOriginalPriceTaxInclusive, originalAmount: $originalAmount, originalAmountWithTax: $originalAmountWithTax, originalAmountWithoutTax: $originalAmountWithoutTax, currencyCode: $currencyCode, calculatedPrice: $calculatedPrice, originalPrice: $originalPrice)';
 }
 
 
@@ -261,7 +289,7 @@ abstract mixin class _$CalculatedPriceCopyWith<$Res> implements $CalculatedPrice
   factory _$CalculatedPriceCopyWith(_CalculatedPrice value, $Res Function(_CalculatedPrice) _then) = __$CalculatedPriceCopyWithImpl;
 @override @useResult
 $Res call({
- int amount,@JsonKey(name: 'currency_code') String currencyCode,@JsonKey(name: 'calculated_amount') int? calculatedAmount,@JsonKey(name: 'is_tax_inclusive') bool isTaxInclusive,@JsonKey(name: 'original_amount') int? originalAmount
+ String? id,@JsonKey(name: 'is_calculated_price_price_list') bool? isCalculatedPricePriceList,@JsonKey(name: 'is_calculated_price_tax_inclusive') bool? isCalculatedPriceTaxInclusive,@JsonKey(name: 'calculated_amount') int? calculatedAmount,@JsonKey(name: 'calculated_amount_with_tax') int? calculatedAmountWithTax,@JsonKey(name: 'calculated_amount_without_tax') int? calculatedAmountWithoutTax,@JsonKey(name: 'is_original_price_price_list') bool? isOriginalPricePriceList,@JsonKey(name: 'is_original_price_tax_inclusive') bool? isOriginalPriceTaxInclusive,@JsonKey(name: 'original_amount') int? originalAmount,@JsonKey(name: 'original_amount_with_tax') int? originalAmountWithTax,@JsonKey(name: 'original_amount_without_tax') int? originalAmountWithoutTax,@JsonKey(name: 'currency_code') String? currencyCode,@JsonKey(name: 'calculated_price') Map<String, dynamic>? calculatedPrice,@JsonKey(name: 'original_price') Map<String, dynamic>? originalPrice
 });
 
 
@@ -278,14 +306,23 @@ class __$CalculatedPriceCopyWithImpl<$Res>
 
 /// Create a copy of CalculatedPrice
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? amount = null,Object? currencyCode = null,Object? calculatedAmount = freezed,Object? isTaxInclusive = null,Object? originalAmount = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? isCalculatedPricePriceList = freezed,Object? isCalculatedPriceTaxInclusive = freezed,Object? calculatedAmount = freezed,Object? calculatedAmountWithTax = freezed,Object? calculatedAmountWithoutTax = freezed,Object? isOriginalPricePriceList = freezed,Object? isOriginalPriceTaxInclusive = freezed,Object? originalAmount = freezed,Object? originalAmountWithTax = freezed,Object? originalAmountWithoutTax = freezed,Object? currencyCode = freezed,Object? calculatedPrice = freezed,Object? originalPrice = freezed,}) {
   return _then(_CalculatedPrice(
-amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
-as int,currencyCode: null == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
-as String,calculatedAmount: freezed == calculatedAmount ? _self.calculatedAmount : calculatedAmount // ignore: cast_nullable_to_non_nullable
-as int?,isTaxInclusive: null == isTaxInclusive ? _self.isTaxInclusive : isTaxInclusive // ignore: cast_nullable_to_non_nullable
-as bool,originalAmount: freezed == originalAmount ? _self.originalAmount : originalAmount // ignore: cast_nullable_to_non_nullable
-as int?,
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,isCalculatedPricePriceList: freezed == isCalculatedPricePriceList ? _self.isCalculatedPricePriceList : isCalculatedPricePriceList // ignore: cast_nullable_to_non_nullable
+as bool?,isCalculatedPriceTaxInclusive: freezed == isCalculatedPriceTaxInclusive ? _self.isCalculatedPriceTaxInclusive : isCalculatedPriceTaxInclusive // ignore: cast_nullable_to_non_nullable
+as bool?,calculatedAmount: freezed == calculatedAmount ? _self.calculatedAmount : calculatedAmount // ignore: cast_nullable_to_non_nullable
+as int?,calculatedAmountWithTax: freezed == calculatedAmountWithTax ? _self.calculatedAmountWithTax : calculatedAmountWithTax // ignore: cast_nullable_to_non_nullable
+as int?,calculatedAmountWithoutTax: freezed == calculatedAmountWithoutTax ? _self.calculatedAmountWithoutTax : calculatedAmountWithoutTax // ignore: cast_nullable_to_non_nullable
+as int?,isOriginalPricePriceList: freezed == isOriginalPricePriceList ? _self.isOriginalPricePriceList : isOriginalPricePriceList // ignore: cast_nullable_to_non_nullable
+as bool?,isOriginalPriceTaxInclusive: freezed == isOriginalPriceTaxInclusive ? _self.isOriginalPriceTaxInclusive : isOriginalPriceTaxInclusive // ignore: cast_nullable_to_non_nullable
+as bool?,originalAmount: freezed == originalAmount ? _self.originalAmount : originalAmount // ignore: cast_nullable_to_non_nullable
+as int?,originalAmountWithTax: freezed == originalAmountWithTax ? _self.originalAmountWithTax : originalAmountWithTax // ignore: cast_nullable_to_non_nullable
+as int?,originalAmountWithoutTax: freezed == originalAmountWithoutTax ? _self.originalAmountWithoutTax : originalAmountWithoutTax // ignore: cast_nullable_to_non_nullable
+as int?,currencyCode: freezed == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
+as String?,calculatedPrice: freezed == calculatedPrice ? _self._calculatedPrice : calculatedPrice // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,originalPrice: freezed == originalPrice ? _self._originalPrice : originalPrice // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,
   ));
 }
 

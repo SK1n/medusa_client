@@ -5,28 +5,28 @@ part 'calculated_price.g.dart';
 
 @freezed
 abstract class CalculatedPrice with _$CalculatedPrice {
-  @JsonSerializable(explicitToJson: true)
   const factory CalculatedPrice({
-    // The amount actually charged (e.g., 1000 for $10.00)
-    required int amount,
-    @JsonKey(name: 'currency_code') required String currencyCode,
-
-    // Detailed breakdown of how this price was reached
+    String? id,
+    @JsonKey(name: 'is_calculated_price_price_list')
+    bool? isCalculatedPricePriceList,
+    @JsonKey(name: 'is_calculated_price_tax_inclusive')
+    bool? isCalculatedPriceTaxInclusive,
     @JsonKey(name: 'calculated_amount') int? calculatedAmount,
-    @JsonKey(name: 'is_tax_inclusive') @Default(false) bool isTaxInclusive,
-
-    // Optional: The original price before discounts
+    @JsonKey(name: 'calculated_amount_with_tax') int? calculatedAmountWithTax,
+    @JsonKey(name: 'calculated_amount_without_tax')
+    int? calculatedAmountWithoutTax,
+    @JsonKey(name: 'is_original_price_price_list')
+    bool? isOriginalPricePriceList,
+    @JsonKey(name: 'is_original_price_tax_inclusive')
+    bool? isOriginalPriceTaxInclusive,
     @JsonKey(name: 'original_amount') int? originalAmount,
+    @JsonKey(name: 'original_amount_with_tax') int? originalAmountWithTax,
+    @JsonKey(name: 'original_amount_without_tax') int? originalAmountWithoutTax,
+    @JsonKey(name: 'currency_code') String? currencyCode,
+    @JsonKey(name: 'calculated_price') Map<String, dynamic>? calculatedPrice,
+    @JsonKey(name: 'original_price') Map<String, dynamic>? originalPrice,
   }) = _CalculatedPrice;
 
   factory CalculatedPrice.fromJson(Map<String, dynamic> json) =>
       _$CalculatedPriceFromJson(json);
-}
-
-extension CalculatedPriceFormatter on CalculatedPrice {
-  double get decimalAmount => amount / 100;
-
-  String get formatted {
-    return '${currencyCode.toUpperCase()} ${decimalAmount.toStringAsFixed(2)}';
-  }
 }

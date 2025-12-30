@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'product_type.dart';
+part of 'product_tag.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ProductType _$ProductTypeFromJson(Map<String, dynamic> json) => _ProductType(
+_ProductTag _$ProductTagFromJson(Map<String, dynamic> json) => _ProductTag(
   id: json['id'] as String,
   value: json['value'] as String?,
   metadata: json['metadata'] as Map<String, dynamic>?,
@@ -21,7 +21,7 @@ _ProductType _$ProductTypeFromJson(Map<String, dynamic> json) => _ProductType(
       : DateTime.parse(json['deleted_at'] as String),
 );
 
-Map<String, dynamic> _$ProductTypeToJson(_ProductType instance) =>
+Map<String, dynamic> _$ProductTagToJson(_ProductTag instance) =>
     <String, dynamic>{
       'id': instance.id,
       'value': instance.value,
